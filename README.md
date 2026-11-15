@@ -60,7 +60,7 @@ Tests cover skill boundaries, scoring contributions, missing experience, 10 DOCX
 5. Upload the generated PDF/DOCX sample files, demonstrate a bad file error.
 6. Export results and reopen a saved run.
 
-Source repository: https://github.com/naman777/resume-ranker (private). A recorded demo remains a submission task; no public deployment is claimed.
+Source repository: https://github.com/naman777/resume-reranker (private). A recorded demo remains a submission task; no public deployment is claimed.
 
 Generate optional sample documents: `pip install reportlab && python samples/generate.py`. ReportLab is only a sample-generation dependency.
 
