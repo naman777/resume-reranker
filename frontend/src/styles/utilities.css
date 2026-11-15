@@ -1,0 +1,14 @@
+.history {
+  margin-bottom: 22px;
+}
+.history > div {
+  display: inline-flex;
+  gap: 4px;
+  margin: 5px;
+}
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #87b36a;
+  outline-offset: 2px;
+}

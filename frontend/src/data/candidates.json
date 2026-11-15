@@ -1,0 +1,102 @@
+[
+  {
+    "id": "candidate-01",
+    "text": "Synthetic Candidate 01\nsample1@example.com\n4 years of professional experience\nBachelor of computer science\nBuilt Python FastAPI services and React interfaces with PostgreSQL, Docker and Git.",
+    "expected": {
+      "name": "Synthetic Candidate 01",
+      "experience": 4,
+      "skills": ["Python", "React", "FastAPI", "SQL", "PostgreSQL", "Docker", "Git"],
+      "qualifications": ["Bachelor"]
+    }
+  },
+  {
+    "id": "candidate-02",
+    "text": "Resume\nSynthetic Candidate 02\nsample2@example.com\n18 months building React and TypeScript interfaces\nSkills: HTML CSS Git\nB.Tech in computer science",
+    "expected": {
+      "name": "Synthetic Candidate 02",
+      "experience": 1.5,
+      "skills": ["TypeScript", "React", "Git", "HTML", "CSS"],
+      "qualifications": ["Bachelor"]
+    }
+  },
+  {
+    "id": "candidate-03",
+    "text": "Curriculum Vitae\nsample3@example.com\nName: Synthetic Candidate 03\n8 years total experience\n2 years using Python and FastAPI\n6 years working with Java and Spring Boot\nMaster of computer science",
+    "expected": {
+      "name": "Synthetic Candidate 03",
+      "experience": 8,
+      "skills": ["Python", "Java", "FastAPI", "Spring Boot"],
+      "qualifications": ["Master"]
+    }
+  },
+  {
+    "id": "candidate-04",
+    "text": "Name: Synthetic Candidate 04\nsample4@example.com\nBachelor of computer science\nCompleted a 4 year degree and a 6 month Python course.\nProjects: React Python HTML CSS\nNo professional experience",
+    "expected": {
+      "name": "Synthetic Candidate 04",
+      "experience": null,
+      "skills": ["Python", "React", "HTML", "CSS"],
+      "qualifications": ["Bachelor"]
+    }
+  },
+  {
+    "id": "candidate-05",
+    "text": "Senior Software Engineer\nName: Synthetic Candidate 05\nsample5@example.com\n7 years overall experience\n3-5 years of Python development\nSkills: Django PostgreSQL Docker automated testing\nM.Sc in computer science",
+    "expected": {
+      "name": "Synthetic Candidate 05",
+      "experience": 7,
+      "skills": ["Python", "Django", "SQL", "PostgreSQL", "Docker", "Testing"],
+      "qualifications": ["Master"]
+    }
+  },
+  {
+    "id": "candidate-06",
+    "text": "Contact information\nsample6@example.com\nCandidate name: Synthetic Candidate 06\n6 years of Java development\nNo Python experience, but built Spring Boot services with SQL.\nBachelor of engineering",
+    "expected": {
+      "name": "Synthetic Candidate 06",
+      "experience": 6,
+      "skills": ["Java", "Spring Boot", "SQL"],
+      "qualifications": ["Bachelor"]
+    }
+  },
+  {
+    "id": "candidate-07",
+    "text": "Name: Synthetic Candidate 07\nsample7@example.com\nExperience | 2 years working with Python\nSkills | FastAPI REST APIs PostgreSQL Redis\nEducation | Bachelor of science",
+    "expected": {
+      "name": "Synthetic Candidate 07",
+      "experience": 2,
+      "skills": ["Python", "FastAPI", "SQL", "PostgreSQL", "REST APIs", "Redis"],
+      "qualifications": ["Bachelor"]
+    }
+  },
+  {
+    "id": "candidate-08",
+    "text": "RESUME\nName: Synthetic Candidate 08\nsample8@example.com\nEmployment: 2022-2024, backend developer; 2023-2025, platform developer\nSkills: Python FastAPI Docker Kubernetes AWS\nMaster degree",
+    "expected": {
+      "name": "Synthetic Candidate 08",
+      "experience": null,
+      "skills": ["Python", "FastAPI", "Docker", "Kubernetes", "AWS"],
+      "qualifications": ["Master"]
+    }
+  },
+  {
+    "id": "candidate-09",
+    "text": "Name: Synthetic Candidate 09\nsample9@example.com\nPython: 24 months experience\nReact: 12 months experience\nSkills: FastAPI Git pytest NLP\nBachelor of technology",
+    "expected": {
+      "name": "Synthetic Candidate 09",
+      "experience": 2,
+      "skills": ["Python", "React", "FastAPI", "Git", "NLP", "Testing"],
+      "qualifications": ["Bachelor"]
+    }
+  },
+  {
+    "id": "candidate-10",
+    "text": "Name: Synthetic Candidate 10\nsample10@example.com\n5 years of experience in JavaScript and Node.js\nSkills: MongoDB React CSS\nBachelor degree",
+    "expected": {
+      "name": "Synthetic Candidate 10",
+      "experience": 5,
+      "skills": ["JavaScript", "React", "MongoDB", "Node.js", "CSS"],
+      "qualifications": ["Bachelor"]
+    }
+  }
+]

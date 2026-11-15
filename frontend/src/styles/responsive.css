@@ -1,0 +1,62 @@
+@media (max-width: 1050px) {
+  aside {
+    width: 185px;
+    padding: 25px 15px;
+  }
+  main {
+    margin-left: 185px;
+    padding: 0 24px;
+  }
+  .intro {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .inputs {
+    grid-template-columns: 1fr;
+  }
+  h1 {
+    font-size: 38px;
+  }
+}
+@media (max-width: 620px) {
+  aside {
+    position: static;
+    width: 100%;
+    padding: 15px 20px;
+    display: block;
+  }
+  .brand {
+    margin: 0;
+    font-size: 20px;
+  }
+  .nav,
+  .sidefoot {
+    display: none;
+  }
+  main {
+    margin: 0;
+    padding: 0 16px;
+  }
+  header {
+    height: 60px;
+  }
+  .intro {
+    margin-top: 26px;
+  }
+  .inputs section,
+  .results {
+    padding: 18px;
+  }
+  .actionbar {
+    gap: 15px;
+  }
+  .actionbar span {
+    max-width: 130px;
+  }
+  .pill {
+    font-size: 9px;
+  }
+  footer span {
+    display: none;
+  }
+}

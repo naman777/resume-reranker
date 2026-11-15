@@ -4,7 +4,7 @@ Prototype for the Avom assignment received November 15, 2026. Submission window:
 
 ## Run
 
-Python 3.12+ and Node 20+:
+Python 3.12+ and Node 20.19+:
 
 ```bash
 python -m venv .venv
@@ -12,7 +12,7 @@ source .venv/bin/activate
 # CPU build avoids downloading GPU dependencies:
 pip install torch --index-url https://download.pytorch.org/whl/cpu
 pip install -r backend/requirements.txt
-python -c "from backend.matching import model; model()"
+python -c "from backend.semantic import model; model()"
 cd frontend
 npm ci
 npm run build
@@ -27,20 +27,99 @@ Click **Try 10 sample candidates**, then **Match candidates** for a synthetic de
 
 ## Architecture
 
-React/Vite → multipart FastAPI endpoint → pypdf/python-docx → structured extraction → Sentence Transformers → explainable scoring → SQLAlchemy database. FastAPI serves the compiled frontend. SQLite is the zero-configuration development default; PostgreSQL is supported through `DATABASE_URL=postgresql+psycopg://user:password@localhost:5432/shortlist`. `docker compose up -d` starts a development Postgres. Set the URL before starting the API. Schema is initialized on startup.
+React/Vite → multipart FastAPI endpoint → pypdf/python-docx → structured extraction → Sentence Transformers → explainable scoring → SQLAlchemy database. FastAPI serves the compiled frontend.
 
-Raw resumes are processed in memory, not stored. Results include extracted candidate details and are persisted locally. Saved runs can be deleted. This prototype has no user authentication; use locally with synthetic data. Production requires authentication, authorization, migrations, rate limits, retention rules, and independent matching evaluation.
+### Database configuration
+
+Put your Neon connection string in `backend/.env` as `DATABASE_URL` (see
+`backend/.env.example`). The backend loads this file automatically, followed by
+the repository-root `.env`. Variables already set in the process take precedence.
+Restart the backend after changing a connection string.
+
+Standard `postgresql://`, `postgres://` and `postgresql+psycopg://` URLs are
+supported through the psycopg driver. Keep the TLS query parameters supplied by
+Neon, including `sslmode=require`. Connections are checked before reuse and
+recycled after five minutes. The `runs` table is created on application startup.
+Connection strings stay on the backend; `.env` files are excluded from Git.
+
+When no `DATABASE_URL` is configured, SQLite remains the local development fallback.
+`docker compose up -d` is an alternative for running PostgreSQL locally. Changing
+databases does not automatically migrate previous SQLite history.
+
+Raw resumes are processed in memory, not stored. Results include extracted candidate details and supporting text snippets, and are persisted in the configured database. Saved runs can be deleted. This prototype has no user authentication; use locally with synthetic data. Production requires authentication, authorization, migrations, rate limits, retention rules, and independent matching evaluation.
+
+## Code organization and development checks
+
+The frontend entry point only mounts `App`. `App` composes the workspace, while
+`useMatchingWorkspace` owns form state, matching requests and saved-run actions.
+Components receive data and callbacks; they do not fetch API data themselves.
+
+```text
+frontend/src/
+  main.jsx                    React entry point
+  App.jsx                     Workspace composition
+  components/                 Inputs, uploads, rankings, analysis and layout
+  hooks/useMatchingWorkspace.js  Workspace state and async actions
+  api/rankings.js             HTTP requests and response error handling
+  data/samples.js             Synthetic demo data
+  utils/exportRanking.js     JSON download
+  styles/                    Base, layout, forms, results and responsive CSS
+
+backend/
+  config.py                  Environment loading and database URL configuration
+  main.py                    FastAPI setup and frontend mounting
+  routes.py                  HTTP validation and request coordination
+  parsing.py                 PDF/DOCX/TXT text extraction and upload limits
+  extraction.py              Candidate identity and structured information
+  taxonomy.py                Skill aliases and qualification patterns
+  skills.py                  Skill detection, negation and supporting evidence
+  experience.py              Duration claims and role relevance comparison
+  requirements.py            Required/desirable JD requirements
+  evidence.py                Source snippets and extracted-text line numbers
+  semantic.py                Cached model, text chunks and embedding similarity
+  matching.py                Weighted scoring, explanations and ranking
+  scoring.py                 Component formulas and versioned weights
+  database.py                Saved-run persistence
+```
+
+Install Python development tools with `pip install -r backend/requirements-dev.txt`.
+From the repository root, run:
+
+```bash
+python -m ruff check backend tests samples
+python -m ruff format --check backend tests samples
+python -m pytest -q
+```
+
+From `frontend`, run:
+
+```bash
+npm ci
+npm run lint
+npm run format:check
+npm test
+npm run build
+```
+
+Use `npm run format` for frontend formatting and `python -m ruff format backend tests samples`
+for Python formatting. Frontend regression tests simulate matching ten samples,
+candidate analysis, search, failed requests and saved-run restore/deletion with
+mock API responses. They do not run the embedding model or replace a browser demo.
+Backend API regression tests use a temporary SQLite database so they do not write
+to the configured Neon database.
 
 ## Matching methodology
 
 Default overall score = **45% semantic similarity + 40% recognized skill coverage + 15% explicit experience fit**. Components are in [0,100]. Each candidate includes scores, normalized weights and exact weighted contributions; totals are rounded to one decimal.
 
-- Semantic: `sentence-transformers/all-MiniLM-L6-v2` normalized embeddings; 180-word chunks, 40-word overlap. For each JD chunk take the best cosine similarity among resume chunks, then average and clamp to [0,1]. Chunking reduces truncation. Candidate first-line name and email are removed before embedding. Semantic score is not a probability or an objectively calibrated assessment of job performance.
-- Skills: fraction of recognized JD skills present in the resume. A transparent, extensible alias dictionary uses word boundaries (Java does not match JavaScript). All detected JD skills currently have equal weight, including desirable skills. Skills outside the dictionary still affect embeddings but not skill coverage.
-- Experience: `min(candidate years / JD years, 1)`. Parse explicit year claims only; missing candidate years receives zero when JD requires years. If JD experience is absent, omit its component and normalize the remaining weights. Similarly omit skill coverage if no recognized JD skills. Explicit claims are estimates, not verified relevant career timelines; overlapping employment dates are not summed. Numeric ranges currently resolve to the largest explicit value, so recruiter review is required.
+- Semantic: `sentence-transformers/all-MiniLM-L6-v2` normalized embeddings; 180-word chunks, 40-word overlap. For each JD chunk take the best cosine similarity among resume chunks, then average and clamp to [0,1]. Chunking reduces truncation. Detected name lines and emails are removed before embedding. Semantic score is not a probability or an objectively calibrated assessment of job performance.
+- Skills: weighted recognized skill coverage. Required/default skills receive weight 1; explicitly desirable skills receive weight 0.25. For a JD requiring Python with optional Docker, Python alone gives 80% skill coverage; Docker alone gives 20%. This is the skills component, not the overall score. Headings and cues such as "must have", "preferred" and "nice to have" determine priority; a required mention wins over a desirable mention. Aliases use word boundaries (Java does not match JavaScript), and common explicit negations such as "no Python experience" do not count as skill evidence. Skills outside the dictionary still affect embeddings but not coverage.
+- Experience: `min(applicable candidate years / required JD years, 1)`. Ranges such as 3–5 years use their lower bound, and months are converted to years. Explicit skill-specific experience takes precedence over general tenure; unrelated skill-specific claims are not credited. For example, 8 years total and 2 years Python compares as 2 years against a Python role. General claims are a fallback and explicitly marked as unverified for role relevance. Common education/course durations are excluded. Missing applicable years scores zero when the JD requires experience. If no JD experience is detected, omit this component and normalize the remaining weights; similarly omit skill coverage when no JD skills are recognized.
 - Qualifications are extracted and displayed, not independently weighted; education content may affect semantic similarity. No age, gender or contact fields are explicitly scored. Embeddings can still contain bias; no fairness claim is made.
 
-Missing skills mean **not detected**, not proof of absence. The skill taxonomy, experience extraction, score weights, and semantic alignment need evaluation on labeled data before real recruiting use. No labeled calibration dataset is included, so accuracy is not claimed.
+Each matched skill and experience claim includes a verbatim snippet and its line number in extracted text (not a PDF page coordinate). New saved runs carry scoring version `2.0`; old runs retain their original scores and remain viewable without the new evidence fields.
+
+Missing skills mean **not detected**, not proof of absence. Name detection, priority cues and negation are heuristics. Work dates are not reconstructed or summed; explicit claims are unverified. A skill-specific claim can support only part of a role. Where a JD contains several distinct experience thresholds, this prototype uses the strongest detected general minimum (or strongest scoped minimum when no general claim exists), rather than evaluating a separate threshold per skill. Alternative requirements such as "Python or Java" are not modeled as alternatives. The taxonomy, weights and semantic alignment still need independent evaluation; scores are not calibrated hiring probabilities.
 
 ## Verification
 
@@ -51,19 +130,54 @@ cd frontend && npm run build
 
 Tests cover skill boundaries, scoring contributions, missing experience, 10 DOCX batch parsing, partial file failure, persistence, and deletion. Model inference is stubbed in integration tests to keep them deterministic; run the app demo separately for real embeddings. Scanned PDFs require OCR externally; corrupt, oversized, unsupported or textless uploads receive individual errors. Each file is limited to 5 MB, PDF to 50 pages, and expanded DOCX to 20 MB.
 
+### Synthetic extraction evaluation
+
+The shared fixtures in `frontend/src/data/candidates.json` include headings before
+names, contact-first resumes, month-based claims, ranges, freshers with course
+durations, total versus skill-specific experience, negated skills, employment dates
+without explicit year counts, and a DOCX table. The demo button uses these same ten
+fictional profiles. Regenerate their document versions and evaluate from the root:
+
+```bash
+python samples/generate.py
+python -m samples.evaluate
+```
+
+For each format (text, PDF and DOCX), the current extraction matches all ten expected
+values in each field. Comparison with the original committed extractor on the same
+fixtures gives:
+
+| Field | Original correct / 10 | Current correct / 10 |
+| --- | ---: | ---: |
+| Candidate name | 1 | 10 |
+| Explicit experience | 7 | 10 |
+| Recognized skill set | 9 | 10 |
+| Qualifications | 10 | 10 |
+
+These are regression results on a small, authored synthetic set, not independent
+accuracy measurements or evidence of generalization to real resumes.
+
 ## Demo walkthrough
 
 1. Start server; load the ten synthetic sample candidates.
-2. Explain the JD skills and experience requirements.
-3. Rank candidates, compare top and lower matches, inspect missing skills.
-4. Explain each weighted score in candidate analysis.
-5. Upload the generated PDF/DOCX sample files, demonstrate a bad file error.
-6. Export results and reopen a saved run.
+2. Explain the required versus desirable JD skills and the experience requirement.
+3. Rank candidates; compare Candidate 01 with the Java-focused Candidate 06.
+4. Open Candidate 03: show 8 years total versus 2 years Python used in scoring.
+5. Expand a skill's supporting passage and explain each weighted score.
+6. Upload the generated PDF/DOCX sample files, demonstrate a bad file error.
+7. Export results and reopen a saved run.
 
 Source repository: https://github.com/naman777/resume-reranker (private). A recorded demo remains a submission task; no public deployment is claimed.
 
 Generate optional sample documents: `pip install reportlab && python samples/generate.py`. ReportLab is only a sample-generation dependency.
 
-Real embedding verification (after generating samples): `PYTHONPATH=. .venv/bin/python tests/smoke_real.py`. This checks ten mixed PDF/DOCX documents end to end without stubbing the model. The initial implementation was checked with three deterministic tests, a production frontend build, and the real-model smoke test. Browser interaction QA was unavailable in the build environment.
+Real embedding verification (after generating samples): `python -m tests.smoke_real`.
+This checks ten distinct candidates in mixed PDF/DOCX formats end to end with actual
+embeddings, validates the strong-versus-unrelated ranking, checks experience
+selection, and deletes its synthetic saved run. The real-model check passed with
+scores ranging from 27.2 to 77.5 on the current fixtures. Live browser QA also
+verified the ten-profile demo, required/desirable skill display, reported versus
+scored experience, expanded evidence snippets and restoring the saved run from
+Neon after reloading. A recorded submission video remains a separate deliverable.
 
 `backend/requirements.lock.txt` captures the tested environment. For a repeatable CPU installation, install Torch from the CPU index first, then use this lock file instead of requirements.txt.
