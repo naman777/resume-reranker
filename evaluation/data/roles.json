@@ -1,0 +1,17 @@
+[
+  {
+    "id": "python_backend",
+    "title": "Python Backend Developer",
+    "text": "Python Backend Developer\nRequired: Python, FastAPI, PostgreSQL, SQL, REST APIs, Docker and automated testing.\nMinimum 3 years of professional backend development experience.\nBuild reliable HTTP services, database transactions, authentication and API tests.\nNice to have: AWS and Redis."
+  },
+  {
+    "id": "react_frontend",
+    "title": "React Frontend Developer",
+    "text": "React Frontend Developer\nRequired: React, TypeScript, HTML, CSS and automated testing.\nMinimum 3 years of professional frontend development experience.\nBuild accessible, responsive web interfaces, reusable components and keyboard navigation.\nNice to have: REST APIs, Node.js and Git."
+  },
+  {
+    "id": "nlp_engineer",
+    "title": "Applied NLP Engineer",
+    "text": "Applied NLP Engineer\nRequired: Python, NLP, PyTorch and SQL.\nMinimum 2 years of professional machine learning experience.\nBuild text retrieval and document classification systems; evaluate models with held-out data, reproducible experiments and error analysis.\nNice to have: FastAPI, Docker and AWS."
+  }
+]

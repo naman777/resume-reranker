@@ -1,0 +1,33 @@
+name: resume-reranker
+
+services:
+  app:
+    build:
+      context: ..
+      dockerfile: Dockerfile
+    image: resume-reranker:latest
+    container_name: resume-reranker
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - '127.0.0.1:8011:8000'
+    networks:
+      proxy:
+        aliases:
+          - resume-reranker
+    mem_limit: 1536m
+    cpus: 1.5
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    logging:
+      driver: json-file
+      options:
+        max-size: '10m'
+        max-file: '3'
+
+networks:
+  proxy:
+    external: true
+    name: foreman-production_default

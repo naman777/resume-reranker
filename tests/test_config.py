@@ -16,3 +16,10 @@ def test_neon_url_uses_psycopg_and_preserves_credentials_and_tls(scheme):
 def test_explicit_environment_setting_takes_precedence(monkeypatch):
     monkeypatch.setenv('DATABASE_URL', 'sqlite:///test.db')
     assert database_url().drivername == 'sqlite'
+
+
+def test_production_requires_an_explicit_database(monkeypatch):
+    monkeypatch.delenv('DATABASE_URL', raising=False)
+    monkeypatch.setenv('APP_ENV', 'production')
+    with pytest.raises(RuntimeError, match='DATABASE_URL'):
+        database_url()

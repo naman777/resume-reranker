@@ -7,3 +7,5 @@ frontend/dist/
 .env
 frontend/coverage/
 .ruff_cache/
+evaluation/reviews/
+evaluation/results/lexical-benchmark.*

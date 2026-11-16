@@ -1,5 +1,6 @@
 """Application setup. Request handling lives in routes; storage in database."""
 
+import os
 from contextlib import asynccontextmanager
 from pathlib import Path
 
@@ -13,6 +14,10 @@ from backend.routes import router
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     initialize_database()
+    if os.getenv('PRELOAD_MODEL') == '1':
+        from backend.semantic import model
+
+        model()
     yield
 
 

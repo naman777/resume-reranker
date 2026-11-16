@@ -1,0 +1,14 @@
+{
+  "dataset_version": "1.0.0",
+  "frozen_at": "2026-11-16T04:19:46.284653+00:00",
+  "author": "Assistant-authored synthetic challenge set",
+  "independent_annotation": false,
+  "hash_encoding": "SHA-256 of UTF-8 JSON with sorted keys, compact separators and ensure_ascii=False; independent of file line endings.",
+  "policy": "Labels frozen before first benchmark run. Do not edit labels in response to observed scores. Changes require a new dataset version.",
+  "sha256": {
+    "roles.json": "e0db9e044e84e9a0f514a36dc0b07dd5b2b60f1caa1994ae82266894a1ae0934",
+    "resumes.json": "ef56510cf85c773c4d141cf51e3ad85a2055596b5250a7487c97c343c2760648",
+    "labels.json": "589af4be7c977ed440af4858a8d87b9880a63a914bb0336293fb2327036613b2",
+    "probes.json": "2da6f5ea73441ea6329b46ac7373e604c819e017a6bd69b9650b422cd686c260"
+  }
+}

@@ -1,0 +1,242 @@
+[
+  {
+    "id": "c01",
+    "title": "Production backend",
+    "text": "Name: Synthetic Profile C01\n4 years of Python backend development experience\nBuilt FastAPI REST APIs with PostgreSQL transactions and SQL migrations.\nShipped Docker services with pytest and automated testing for authentication, retries and request validation.\nMaintained Redis caching and AWS deployments.",
+    "tags": [
+      "strong_match"
+    ]
+  },
+  {
+    "id": "c02",
+    "title": "Backend paraphrase",
+    "text": "Name: Synthetic Profile C02\n4 years building production Python web services\nDesigned HTTP endpoints, validated incoming payloads and maintained relational data transactions.\nPackaged services into containers and wrote regression checks for authorization and failure recovery.\nOwned schema changes and on-call incident investigations.",
+    "tags": [
+      "paraphrase"
+    ]
+  },
+  {
+    "id": "c03",
+    "title": "Java enterprise developer",
+    "text": "Name: Synthetic Profile C03\n5 years of Java development experience\nBuilt Spring Boot REST APIs backed by SQL databases.\nUsed Docker and automated testing for transactional enterprise applications.\nMaintained authentication and database migration pipelines.",
+    "tags": [
+      "wrong_stack"
+    ]
+  },
+  {
+    "id": "c04",
+    "title": "Backend keyword list",
+    "text": "Name: Synthetic Profile C04\nNo professional experience.\nSearch terms copied from job listings: Python FastAPI PostgreSQL SQL REST APIs Docker automated testing AWS Redis.\nNo completed backend project is described.\nSeeking an opportunity to begin learning software development.",
+    "tags": [
+      "keyword_stuffing"
+    ]
+  },
+  {
+    "id": "c05",
+    "title": "Unrelated seniority",
+    "text": "Name: Synthetic Profile C05\n10 years overall experience\n9 years of Java maintenance experience\n1 year using Python for internal scripts\nMaintained SQL reports and scheduled file transfers.\nNo FastAPI delivery or production web service ownership is described.",
+    "tags": [
+      "unrelated_tenure"
+    ]
+  },
+  {
+    "id": "c06",
+    "title": "Backend intern",
+    "text": "Name: Synthetic Profile C06\n3 months of Python internship experience\nCreated a FastAPI endpoint and a PostgreSQL-backed task list.\nPractised SQL and REST APIs with pytest tests.\nBachelor degree; seeking a first full-time backend role.",
+    "tags": [
+      "junior"
+    ]
+  },
+  {
+    "id": "c07",
+    "title": "Django backend",
+    "text": "Name: Synthetic Profile C07\n4 years of Python backend development experience\nBuilt Django REST APIs and PostgreSQL query layers using SQL.\nImplemented automated testing with pytest, Docker packaging and transaction rollback.\nOwned production authentication and request validation.",
+    "tags": [
+      "partial_stack"
+    ]
+  },
+  {
+    "id": "c08",
+    "title": "Backend with frontend gap",
+    "text": "Name: Synthetic Profile C08\n5 years of Python backend development experience\nBuilt FastAPI REST APIs using PostgreSQL and SQL.\nUsed Docker and pytest for automated testing of authentication and data integrity.\nNo React experience; no TypeScript experience.\nBachelor degree in computing.",
+    "tags": [
+      "negation"
+    ]
+  },
+  {
+    "id": "c09",
+    "title": "Undated side project",
+    "text": "Name: Synthetic Profile C09\nSkills: Python, FastAPI, PostgreSQL and SQL\nBuilt a personal REST APIs project with Docker and automated testing.\nThe project has no production users and no professional duration is supplied.\nBachelor degree in computing.",
+    "tags": [
+      "missing_experience"
+    ]
+  },
+  {
+    "id": "c10",
+    "title": "Experienced returner",
+    "text": "Name: Synthetic Profile C10\n5 years of Python backend development experience\nDelivered FastAPI REST APIs with PostgreSQL, SQL transactions, Docker and automated testing.\nOwned authentication, schema migrations and production incident response.\nWorked in these roles from 2018 to 2023; took a career break afterward.",
+    "tags": [
+      "career_break"
+    ]
+  },
+  {
+    "id": "c11",
+    "title": "Production React engineer",
+    "text": "Name: Synthetic Profile C11\n4 years of React and TypeScript frontend development experience\nBuilt responsive HTML and CSS interfaces with reusable components.\nUsed Jest and automated testing for forms, keyboard navigation and REST APIs integration.\nMaintained Git workflows and browser accessibility checks.",
+    "tags": [
+      "strong_match"
+    ]
+  },
+  {
+    "id": "c12",
+    "title": "Frontend paraphrase",
+    "text": "Name: Synthetic Profile C12\n4 years building React user interfaces\nDeveloped reusable screen components and typed JavaScript modules.\nCreated semantic markup and responsive stylesheets for keyboard-only users.\nChecked focus behavior and forms across browsers; integrated HTTP data from backend services.",
+    "tags": [
+      "paraphrase"
+    ]
+  },
+  {
+    "id": "c13",
+    "title": "Visual designer",
+    "text": "Name: Synthetic Profile C13\n5 years of visual design experience\nCreated Figma prototypes and HTML CSS landing pages.\nDesigned responsive layouts and conducted usability interviews.\nNo React or TypeScript experience.\nNo automated testing work is claimed.",
+    "tags": [
+      "adjacent_role"
+    ]
+  },
+  {
+    "id": "c14",
+    "title": "Frontend keyword list",
+    "text": "Name: Synthetic Profile C14\nNo professional experience.\nCopied search keywords: React TypeScript HTML CSS automated testing REST APIs Node.js Git.\nNo implemented interface, test suite or completed project is described.\nLooking for introductory training.",
+    "tags": [
+      "keyword_stuffing"
+    ]
+  },
+  {
+    "id": "c15",
+    "title": "Junior React developer",
+    "text": "Name: Synthetic Profile C15\n18 months of React and TypeScript development experience\nBuilt HTML CSS forms and reusable components.\nUsed Jest for automated testing and integrated REST APIs.\nAssisted a senior engineer with responsive layouts and keyboard interactions.",
+    "tags": [
+      "junior"
+    ]
+  },
+  {
+    "id": "c16",
+    "title": "Accessible frontend specialist",
+    "text": "Name: Synthetic Profile C16\n5 years of React and TypeScript frontend development experience\nBuilt HTML CSS design-system components with accessible names, focus management and keyboard navigation.\nUsed Jest and automated testing for responsive checkout forms.\nIntegrated REST APIs, maintained Git branches and investigated browser regressions.",
+    "tags": [
+      "accessibility"
+    ]
+  },
+  {
+    "id": "c17",
+    "title": "Split full-stack tenure",
+    "text": "Name: Synthetic Profile C17\n4 years overall experience\n2 years of Python FastAPI backend development experience\nBuilt PostgreSQL SQL REST APIs services with Docker and pytest.\n2 years of React TypeScript frontend development experience\nDelivered responsive HTML CSS forms with Jest automated testing and keyboard support.",
+    "tags": [
+      "split_experience"
+    ]
+  },
+  {
+    "id": "c18",
+    "title": "Angular frontend developer",
+    "text": "Name: Synthetic Profile C18\n4 years of frontend development experience using Angular and TypeScript\nCreated responsive HTML CSS component libraries and accessible keyboard interactions.\nUsed Jest and automated testing for REST APIs integration.\nNo React delivery is claimed.",
+    "tags": [
+      "wrong_framework"
+    ]
+  },
+  {
+    "id": "c19",
+    "title": "Node service developer",
+    "text": "Name: Synthetic Profile C19\n4 years of Node.js and TypeScript backend development experience\nBuilt REST APIs and SQL database services with automated testing.\nMaintained Git branches and production logging.\nNo React frontend work or accessible HTML CSS interface is described.",
+    "tags": [
+      "adjacent_role"
+    ]
+  },
+  {
+    "id": "c20",
+    "title": "Frontend course graduate",
+    "text": "Name: Synthetic Profile C20\nCompleted a 1 year React TypeScript course.\nBuilt an HTML CSS capstone form with Jest and automated testing.\nPractised responsive layouts, Git and REST APIs integration.\nNo professional frontend experience.",
+    "tags": [
+      "course_duration"
+    ]
+  },
+  {
+    "id": "c21",
+    "title": "Production text retrieval engineer",
+    "text": "Name: Synthetic Profile C21\n3 years of Python NLP engineering experience\nBuilt PyTorch text retrieval encoders and document classifiers backed by SQL datasets.\nMeasured recall and classification errors on held-out data, tracked reproducible experiments and inspected failure slices.\nPackaged inference with Docker and AWS deployments.",
+    "tags": [
+      "strong_match"
+    ]
+  },
+  {
+    "id": "c22",
+    "title": "Language-modeling paraphrase",
+    "text": "Name: Synthetic Profile C22\n3 years building Python systems for language understanding\nTrained neural text encoders for document search and categorization.\nUsed relational queries to construct datasets, measured retrieval quality on unseen documents and inspected errors.\nReproduced experiments with fixed splits and versioned model artifacts.",
+    "tags": [
+      "paraphrase"
+    ]
+  },
+  {
+    "id": "c23",
+    "title": "Business analyst",
+    "text": "Name: Synthetic Profile C23\n5 years of business analytics experience\nBuilt SQL dashboards, spreadsheet reports and Power BI presentations.\nInvestigated sales trends and documented reporting definitions.\nNo Python NLP or PyTorch experience.",
+    "tags": [
+      "adjacent_role"
+    ]
+  },
+  {
+    "id": "c24",
+    "title": "ML keyword list",
+    "text": "Name: Synthetic Profile C24\nNo professional experience.\nCopied job keywords: Python NLP PyTorch SQL FastAPI Docker AWS text retrieval classification held-out evaluation reproducible experiments.\nNo trained model, dataset or completed experiment is described.\nSeeking a first introduction to machine learning.",
+    "tags": [
+      "keyword_stuffing"
+    ]
+  },
+  {
+    "id": "c25",
+    "title": "Research intern",
+    "text": "Name: Synthetic Profile C25\n6 months of Python NLP research internship experience\nBuilt a scikit-learn document classifier and evaluated held-out samples.\nUsed SQL for dataset sampling and wrote an error-analysis notebook.\nBachelor degree; no PyTorch work is claimed.",
+    "tags": [
+      "junior"
+    ]
+  },
+  {
+    "id": "c26",
+    "title": "Computer vision engineer",
+    "text": "Name: Synthetic Profile C26\n3 years of Python PyTorch machine learning experience\nBuilt image classifiers and object detectors using SQL datasets.\nTracked held-out accuracy, reproducible experiments and failure analysis.\nNo NLP or text retrieval experience.\nPackaged image inference using Docker.",
+    "tags": [
+      "wrong_domain"
+    ]
+  },
+  {
+    "id": "c27",
+    "title": "Applied document ML engineer",
+    "text": "Name: Synthetic Profile C27\n4 years of Python NLP engineering experience\nUsed PyTorch for document classification, embedding retrieval and SQL-backed dataset construction.\nCompared models on held-out data, published reproducible experiment notes and investigated errors by document type.\nServed inference through FastAPI and Docker.",
+    "tags": [
+      "cross_role"
+    ]
+  },
+  {
+    "id": "c28",
+    "title": "Java ML platform engineer",
+    "text": "Name: Synthetic Profile C28\n4 years of Java machine learning platform experience\nMaintained Spark feature pipelines and TensorFlow image-model deployments.\nUsed SQL to audit training datasets and automated testing for data contracts.\nNo Python NLP or PyTorch experience.",
+    "tags": [
+      "wrong_stack"
+    ]
+  },
+  {
+    "id": "c29",
+    "title": "Text researcher without SQL",
+    "text": "Name: Synthetic Profile C29\n24 months of Python NLP research experience\nTrained PyTorch document retrieval and classification models.\nCompared held-out performance, reproduced experiments and wrote error-analysis summaries.\nStored datasets in flat files; no SQL experience is claimed.",
+    "tags": [
+      "missing_required_skill"
+    ]
+  },
+  {
+    "id": "c30",
+    "title": "Infrastructure operator",
+    "text": "Name: Synthetic Profile C30\n7 years of Linux infrastructure operations experience\nMaintained AWS Docker and Kubernetes workloads, incident runbooks and network monitoring.\nNo Python application development, React interface work or NLP modeling is claimed.",
+    "tags": [
+      "unrelated_role"
+    ]
+  }
+]

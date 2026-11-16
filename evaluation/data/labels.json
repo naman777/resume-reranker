@@ -1,0 +1,378 @@
+{
+  "rubric": {
+    "0": "No demonstrated fit",
+    "1": "Limited or transferable fit",
+    "2": "Relevant partial fit with a material gap",
+    "3": "Strong demonstrated fit"
+  },
+  "authorship": "Assistant-authored synthetic judgments, frozen before scoring; not independently human annotated.",
+  "relevant_threshold": 2,
+  "judgments": {
+    "python_backend": {
+      "c01": {
+        "grade": 3,
+        "rationale": "Meets the core stack, relevant tenure and production responsibilities."
+      },
+      "c02": {
+        "grade": 2,
+        "rationale": "Relevant service work, but the required framework and database product are unnamed."
+      },
+      "c03": {
+        "grade": 1,
+        "rationale": "Backend responsibilities transfer, but Python and FastAPI are missing."
+      },
+      "c04": {
+        "grade": 0,
+        "rationale": "Copied tools supply no demonstrated work or project evidence."
+      },
+      "c05": {
+        "grade": 1,
+        "rationale": "Ten years overall does not establish three years in the required stack."
+      },
+      "c06": {
+        "grade": 1,
+        "rationale": "Relevant small project with limited professional tenure."
+      },
+      "c07": {
+        "grade": 2,
+        "rationale": "Strong backend evidence with a required-framework gap."
+      },
+      "c08": {
+        "grade": 3,
+        "rationale": "Meets backend requirements; explicit lack of frontend experience must not count as evidence."
+      },
+      "c09": {
+        "grade": 1,
+        "rationale": "A relevant side project does not establish required professional tenure."
+      },
+      "c10": {
+        "grade": 3,
+        "rationale": "Five explicit relevant years and delivery evidence; a career break is not a negative criterion."
+      },
+      "c11": {
+        "grade": 0,
+        "rationale": "No demonstrated delivery for this role; isolated tool mentions are insufficient."
+      },
+      "c12": {
+        "grade": 0,
+        "rationale": "No demonstrated delivery for this role; isolated tool mentions are insufficient."
+      },
+      "c13": {
+        "grade": 0,
+        "rationale": "No demonstrated delivery for this role; isolated tool mentions are insufficient."
+      },
+      "c14": {
+        "grade": 0,
+        "rationale": "No demonstrated delivery for this role; isolated tool mentions are insufficient."
+      },
+      "c15": {
+        "grade": 0,
+        "rationale": "No demonstrated delivery for this role; isolated tool mentions are insufficient."
+      },
+      "c16": {
+        "grade": 0,
+        "rationale": "No demonstrated delivery for this role; isolated tool mentions are insufficient."
+      },
+      "c17": {
+        "grade": 2,
+        "rationale": "Partial transferable evidence; required specialty or delivery evidence is incomplete."
+      },
+      "c18": {
+        "grade": 0,
+        "rationale": "No demonstrated delivery for this role; isolated tool mentions are insufficient."
+      },
+      "c19": {
+        "grade": 1,
+        "rationale": "Partial transferable evidence; required specialty or delivery evidence is incomplete."
+      },
+      "c20": {
+        "grade": 0,
+        "rationale": "No demonstrated delivery for this role; isolated tool mentions are insufficient."
+      },
+      "c21": {
+        "grade": 1,
+        "rationale": "Partial transferable evidence; required specialty or delivery evidence is incomplete."
+      },
+      "c22": {
+        "grade": 1,
+        "rationale": "Partial transferable evidence; required specialty or delivery evidence is incomplete."
+      },
+      "c23": {
+        "grade": 0,
+        "rationale": "No demonstrated delivery for this role; isolated tool mentions are insufficient."
+      },
+      "c24": {
+        "grade": 0,
+        "rationale": "No demonstrated delivery for this role; isolated tool mentions are insufficient."
+      },
+      "c25": {
+        "grade": 0,
+        "rationale": "No demonstrated delivery for this role; isolated tool mentions are insufficient."
+      },
+      "c26": {
+        "grade": 1,
+        "rationale": "Partial transferable evidence; required specialty or delivery evidence is incomplete."
+      },
+      "c27": {
+        "grade": 1,
+        "rationale": "Partial transferable evidence; required specialty or delivery evidence is incomplete."
+      },
+      "c28": {
+        "grade": 1,
+        "rationale": "Partial transferable evidence; required specialty or delivery evidence is incomplete."
+      },
+      "c29": {
+        "grade": 0,
+        "rationale": "No demonstrated delivery for this role; isolated tool mentions are insufficient."
+      },
+      "c30": {
+        "grade": 0,
+        "rationale": "No demonstrated delivery for this role; isolated tool mentions are insufficient."
+      }
+    },
+    "react_frontend": {
+      "c01": {
+        "grade": 0,
+        "rationale": "No demonstrated delivery for this role; isolated tool mentions are insufficient."
+      },
+      "c02": {
+        "grade": 0,
+        "rationale": "No demonstrated delivery for this role; isolated tool mentions are insufficient."
+      },
+      "c03": {
+        "grade": 0,
+        "rationale": "No demonstrated delivery for this role; isolated tool mentions are insufficient."
+      },
+      "c04": {
+        "grade": 0,
+        "rationale": "No demonstrated delivery for this role; isolated tool mentions are insufficient."
+      },
+      "c05": {
+        "grade": 0,
+        "rationale": "No demonstrated delivery for this role; isolated tool mentions are insufficient."
+      },
+      "c06": {
+        "grade": 0,
+        "rationale": "No demonstrated delivery for this role; isolated tool mentions are insufficient."
+      },
+      "c07": {
+        "grade": 0,
+        "rationale": "No demonstrated delivery for this role; isolated tool mentions are insufficient."
+      },
+      "c08": {
+        "grade": 0,
+        "rationale": "No demonstrated delivery for this role; isolated tool mentions are insufficient."
+      },
+      "c09": {
+        "grade": 0,
+        "rationale": "No demonstrated delivery for this role; isolated tool mentions are insufficient."
+      },
+      "c10": {
+        "grade": 0,
+        "rationale": "No demonstrated delivery for this role; isolated tool mentions are insufficient."
+      },
+      "c11": {
+        "grade": 3,
+        "rationale": "Meets framework, language, testing, accessibility and tenure requirements."
+      },
+      "c12": {
+        "grade": 2,
+        "rationale": "Relevant interface work, but TypeScript and automated test tooling are not explicit."
+      },
+      "c13": {
+        "grade": 1,
+        "rationale": "Design and markup transfer, but application programming evidence is missing."
+      },
+      "c14": {
+        "grade": 0,
+        "rationale": "A skills list without supporting delivery, employment or projects."
+      },
+      "c15": {
+        "grade": 1,
+        "rationale": "Most stack requirements appear, but tenure is substantially below the minimum."
+      },
+      "c16": {
+        "grade": 3,
+        "rationale": "Relevant tenure and strong accessibility, component and testing evidence."
+      },
+      "c17": {
+        "grade": 2,
+        "rationale": "Relevant work for both web roles, with only two explicit years in each specialty."
+      },
+      "c18": {
+        "grade": 2,
+        "rationale": "Strong transferable frontend work, with a required React-framework gap."
+      },
+      "c19": {
+        "grade": 1,
+        "rationale": "TypeScript service work is adjacent; React interface ownership is absent."
+      },
+      "c20": {
+        "grade": 1,
+        "rationale": "A learning project provides limited evidence without professional tenure."
+      },
+      "c21": {
+        "grade": 0,
+        "rationale": "No demonstrated delivery for this role; isolated tool mentions are insufficient."
+      },
+      "c22": {
+        "grade": 0,
+        "rationale": "No demonstrated delivery for this role; isolated tool mentions are insufficient."
+      },
+      "c23": {
+        "grade": 0,
+        "rationale": "No demonstrated delivery for this role; isolated tool mentions are insufficient."
+      },
+      "c24": {
+        "grade": 0,
+        "rationale": "No demonstrated delivery for this role; isolated tool mentions are insufficient."
+      },
+      "c25": {
+        "grade": 0,
+        "rationale": "No demonstrated delivery for this role; isolated tool mentions are insufficient."
+      },
+      "c26": {
+        "grade": 0,
+        "rationale": "No demonstrated delivery for this role; isolated tool mentions are insufficient."
+      },
+      "c27": {
+        "grade": 0,
+        "rationale": "No demonstrated delivery for this role; isolated tool mentions are insufficient."
+      },
+      "c28": {
+        "grade": 0,
+        "rationale": "No demonstrated delivery for this role; isolated tool mentions are insufficient."
+      },
+      "c29": {
+        "grade": 0,
+        "rationale": "No demonstrated delivery for this role; isolated tool mentions are insufficient."
+      },
+      "c30": {
+        "grade": 0,
+        "rationale": "No demonstrated delivery for this role; isolated tool mentions are insufficient."
+      }
+    },
+    "nlp_engineer": {
+      "c01": {
+        "grade": 1,
+        "rationale": "Partial transferable evidence; required specialty or delivery evidence is incomplete."
+      },
+      "c02": {
+        "grade": 1,
+        "rationale": "Partial transferable evidence; required specialty or delivery evidence is incomplete."
+      },
+      "c03": {
+        "grade": 0,
+        "rationale": "No demonstrated delivery for this role; isolated tool mentions are insufficient."
+      },
+      "c04": {
+        "grade": 0,
+        "rationale": "No demonstrated delivery for this role; isolated tool mentions are insufficient."
+      },
+      "c05": {
+        "grade": 0,
+        "rationale": "No demonstrated delivery for this role; isolated tool mentions are insufficient."
+      },
+      "c06": {
+        "grade": 0,
+        "rationale": "No demonstrated delivery for this role; isolated tool mentions are insufficient."
+      },
+      "c07": {
+        "grade": 1,
+        "rationale": "Partial transferable evidence; required specialty or delivery evidence is incomplete."
+      },
+      "c08": {
+        "grade": 1,
+        "rationale": "Partial transferable evidence; required specialty or delivery evidence is incomplete."
+      },
+      "c09": {
+        "grade": 0,
+        "rationale": "No demonstrated delivery for this role; isolated tool mentions are insufficient."
+      },
+      "c10": {
+        "grade": 1,
+        "rationale": "Partial transferable evidence; required specialty or delivery evidence is incomplete."
+      },
+      "c11": {
+        "grade": 0,
+        "rationale": "No demonstrated delivery for this role; isolated tool mentions are insufficient."
+      },
+      "c12": {
+        "grade": 0,
+        "rationale": "No demonstrated delivery for this role; isolated tool mentions are insufficient."
+      },
+      "c13": {
+        "grade": 0,
+        "rationale": "No demonstrated delivery for this role; isolated tool mentions are insufficient."
+      },
+      "c14": {
+        "grade": 0,
+        "rationale": "No demonstrated delivery for this role; isolated tool mentions are insufficient."
+      },
+      "c15": {
+        "grade": 0,
+        "rationale": "No demonstrated delivery for this role; isolated tool mentions are insufficient."
+      },
+      "c16": {
+        "grade": 0,
+        "rationale": "No demonstrated delivery for this role; isolated tool mentions are insufficient."
+      },
+      "c17": {
+        "grade": 0,
+        "rationale": "No demonstrated delivery for this role; isolated tool mentions are insufficient."
+      },
+      "c18": {
+        "grade": 0,
+        "rationale": "No demonstrated delivery for this role; isolated tool mentions are insufficient."
+      },
+      "c19": {
+        "grade": 0,
+        "rationale": "No demonstrated delivery for this role; isolated tool mentions are insufficient."
+      },
+      "c20": {
+        "grade": 0,
+        "rationale": "No demonstrated delivery for this role; isolated tool mentions are insufficient."
+      },
+      "c21": {
+        "grade": 3,
+        "rationale": "Meets core stack, tenure, retrieval work and reproducible evaluation requirements."
+      },
+      "c22": {
+        "grade": 2,
+        "rationale": "Strong text-modeling responsibilities, with the required tensor framework unnamed."
+      },
+      "c23": {
+        "grade": 1,
+        "rationale": "SQL and analysis transfer, but NLP model training evidence is absent."
+      },
+      "c24": {
+        "grade": 0,
+        "rationale": "Copied tools and evaluation terms have no supporting implementation."
+      },
+      "c25": {
+        "grade": 1,
+        "rationale": "Relevant exposure, but professional tenure is below two years."
+      },
+      "c26": {
+        "grade": 2,
+        "rationale": "ML framework and evaluation transfer, but language-domain experience is missing."
+      },
+      "c27": {
+        "grade": 3,
+        "rationale": "Meets the stack, tenure and applied text-evaluation responsibilities."
+      },
+      "c28": {
+        "grade": 1,
+        "rationale": "Transferable ML infrastructure exists, but required language, framework and domain are unmet."
+      },
+      "c29": {
+        "grade": 2,
+        "rationale": "Meets text modeling, framework and tenure, but required SQL experience is unverified."
+      },
+      "c30": {
+        "grade": 0,
+        "rationale": "Infrastructure skills do not establish application, React or NLP delivery."
+      }
+    }
+  }
+}

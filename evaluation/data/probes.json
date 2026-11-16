@@ -1,0 +1,47 @@
+[
+  {
+    "role_id": "python_backend",
+    "better": "c01",
+    "worse": "c04"
+  },
+  {
+    "role_id": "python_backend",
+    "better": "c02",
+    "worse": "c03"
+  },
+  {
+    "role_id": "python_backend",
+    "better": "c10",
+    "worse": "c05"
+  },
+  {
+    "role_id": "react_frontend",
+    "better": "c11",
+    "worse": "c14"
+  },
+  {
+    "role_id": "react_frontend",
+    "better": "c12",
+    "worse": "c13"
+  },
+  {
+    "role_id": "react_frontend",
+    "better": "c16",
+    "worse": "c15"
+  },
+  {
+    "role_id": "nlp_engineer",
+    "better": "c21",
+    "worse": "c24"
+  },
+  {
+    "role_id": "nlp_engineer",
+    "better": "c22",
+    "worse": "c23"
+  },
+  {
+    "role_id": "nlp_engineer",
+    "better": "c27",
+    "worse": "c25"
+  }
+]
